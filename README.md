@@ -61,15 +61,7 @@ folder here just to make the homework repository a bit tidier:
      * Correlation of different indexes (`Net_provisions` and `Interest_income` here) can be invesigated using the produced wide data ([`finance_wide.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_wide.tsv)).
     - [`IndexCorrelation_interest_provisions_facet.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/IndexCorrelation_interest_provisions_facet.png):
      * This is the faceted bubble diagram of the previous figure, for a selection of countries and sized by loans:
-    - [``]
-     *  
-    - [``]
-     *  
-    - [``]
-     * 
-
-
-
-    - [`barchart_totalWords.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWords.png)
-    - [`barchart_totalWordsFilmDodge.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWordsFilmDodge.png)
-    - [`lotr_clean.tsv`](https://github.com/jennybc/STAT545A/blob/master/hw06_scaffolds/01_justR/lotr_clean.tsv)
+    - [`Employment_CommercialBanks_SelectedCounttries.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Employment_CommercialBanks_SelectedCounttries.png):
+     * This figure and the next one give us some information about employment in different banking institutes (sized by number of institutions) in the first decade of 20th century. We can see here that some countries show a decrease in emplyees between 2002 to 2006.
+    - [`Employment_CommercialBanks_USA.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Employment_CommercialBanks_USA.png):
+     * This figure on the other hand, shows that in United States decrease in emplyees for commercial banks happens after 2007 with decrease in number of institutions.
