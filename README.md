@@ -30,7 +30,12 @@ folder here just to make the homework repository a bit tidier:
     - [`Barchart_income_types.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Barchart_income_types.png):
      * Shows and compares two income types in different banks.
     - [`Density_NetProvisions.png `](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Density_NetProvisions.png):
-     * Shows density diagram for net provision index in different countries.
+     * Shows density diagram for net provision index in different countries. 
+    - [`Expense_boxplot.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Expense_boxplot.png):
+     * We can see from this figure that range of data for *Korea* is much higher comparing to other countries. Also, data for countries like *Portugal* and *Norway* is confined to a relatively small range.
+    - []
+     * 
+    - []
 
 
     - [`barchart_totalWords.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWords.png)
