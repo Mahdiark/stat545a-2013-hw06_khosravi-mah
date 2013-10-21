@@ -5,7 +5,7 @@ HW #06: The Last Challenge
 
 
 The source data from last week, i.e. "Bank Profitability Statistics" under the "Finance" subsection from [OECD.Stat Extracts](http://stats.oecd.org/)
-was imported again, but better sence of cleaning and managing the data set was applied this time.
+was imported again, but better sence of cleaning and managing the data set was applied this time.  
 Toy example for [STAT 545A Homework 6](http://www.stat.ubc.ca/~jenny/STAT545A/hw06_puttingAllTogether.html).
 
 Shows how to create a small-but-automated analytical pipline using R alone or R plus the shell.
