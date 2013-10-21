@@ -30,12 +30,17 @@ folder here just to make the homework repository a bit tidier:
     - [`Barchart_income_types.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Barchart_income_types.png):
      * Shows and compares two income types in different banks.
     - [`Density_NetProvisions.png `](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Density_NetProvisions.png):
-     * Shows density diagram for net provision index in different countries. 
+     * Shows density diagram for net provision index in different countries. We can see from this figure that data for some countries like *Portugal* and *Turkey* is confined to a relatively small range inceasing their corresponding height in density diagram.
     - [`Expense_boxplot.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Expense_boxplot.png):
-     * We can see from this figure that range of data for *Korea* is much higher comparing to other countries. Also, data for countries like *Portugal* and *Norway* is confined to a relatively small range.
-    - []
-     * 
-    - []
+     * We can see from this figure that range of data for *Korea* is much higher comparing to other countries. Also, again we can notice that data for some countries like *Portugal*, *Norway*,*Turkey* is confined to a relatively small range.
+    - [`finance_clean.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_clean.tsv)
+     * This is the clean version of the input data. Actually,its `.rds` version (`finance_clean.rds`) is read in the second script to preserve the orders.
+    - [`finance_wide.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_wide.tsv)
+     * This is the reshaped to wide version of the `finance_clean.tsv`, which is produced to perform data aggregations and make plots on different indexes that are basically different levels of `finance_clean.tsv`. The other difference is that dependant bank types, e.g. *All_banks*, are omitted here.
+  * #### Outputs of [`Aggregate_and_Plots.R`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/Aggregate_and_Plots.R):
+    - [``]
+
+
 
 
     - [`barchart_totalWords.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWords.png)
