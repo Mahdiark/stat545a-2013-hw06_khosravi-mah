@@ -39,7 +39,17 @@ folder here just to make the homework repository a bit tidier:
      * This is the reshaped to wide version of the `finance_clean.tsv`, which is produced to perform data aggregations and make plots on different indexes that are basically different levels of `finance_clean.tsv`. The other difference is that dependant bank types, e.g. *All_banks*, are omitted here.
 
   * #### Outputs of [`Aggregate_and_Plots.R`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/Aggregate_and_Plots.R):
-    - [``]
+    - [`Loans_allBanks_selectedCountries_Actual.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Loans_allBanks_selectedCountries_Actual.png):
+     * we can see increase in loans in different years in this figure. Average changes are different in order, and logging also fades away the incease in years. So comparing the average changes, which is done in the next figure, is the other option two just study the countries' relative performance.
+    - [Loans_allBanks_selectedCountries_Normalized.png](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Loans_allBanks_selectedCountries_Normalized.png):
+     * Now this is much better. In the next figure, I have put the last two figures side by side in a `.pdf` figure file.
+    - [Loans_allBanks_selectedCountries_NormalizedVsActual.pdf](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Loans_allBanks_selectedCountries_NormalizedVsActual.pdf):
+     * I know! unfortunately GitHub shows it only in raw view. I couldn't find a good way to make a `.png` out of it!
+    - [Loans_allBanks_allCountries_Normalized.png](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Loans_allBanks_allCountries_Normalized.png):
+     * Not interesting! A better way to study this is to make regressions and compare them:
+    - [LoansSlopes_allBanks_allCountries_Normalized.png](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/LoansSlopes_allBanks_allCountries_Normalized.png):
+     * Slopes of linear regressions of normalized data is ordered and plotted here. We can compare intercepts as well:
+    - []
 
 
 
