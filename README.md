@@ -26,7 +26,7 @@ New files you should see after running the pipeline and a short elaboration on e
 I have made a [`My_figures`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/tree/master/My_figures) 
 folder here just to make the homework repository a bit tidier:
 
-  * Outputs of [`Cleaning_and_Ordering.R`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/Cleaning_and_Ordering.R):
+  * #### Outputs of [`Cleaning_and_Ordering.R`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/Cleaning_and_Ordering.R):
     - [`Barchart_income_types.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Barchart_income_types.png):
      * Shows and compares two income types in different banks.
     - [`Density_NetProvisions.png `](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Density_NetProvisions.png):
