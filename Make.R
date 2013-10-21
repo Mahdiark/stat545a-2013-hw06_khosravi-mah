@@ -5,5 +5,5 @@ outputs <- c(list.files(pattern = "*.tsv$"),
 file.remove(outputs)
 
 ## run my scripts
-source("HW06_Cleaning_and_Ordering.R")
-source("HW06_Aggregate_and_Plots.R")
+source("Cleaning_and_Ordering.R")
+source("Aggregate_and_Plots.R")
