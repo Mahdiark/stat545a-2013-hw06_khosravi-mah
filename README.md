@@ -57,7 +57,18 @@ folder here just to make the homework repository a bit tidier:
     - [`LoansCoefs_allBanks_allCountries_Actual.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/LoansCoefs_allBanks_allCountries_Actual.png):
      * Now this seems to be more informative and a more rational way to compare linear regression coefficients. Note that intercepts for *Russia*, *Estony* and *Slovenia* are negative and not plotted here. Ditto *Japan*'s Slope.
   * Different banks and indexes:
+    - [`IndexCorrelation_interest_provisions.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/IndexCorrelation_interest_provisions.png):
+     * Correlation of different indexes (`Net_provisions` and `Interest_income` here) can be invesigated using the produced wide data ([`finance_wide.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_wide.tsv)).
+    - [`IndexCorrelation_interest_provisions_facet.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/IndexCorrelation_interest_provisions_facet.png):
+     * This is the faceted bubble diagram of the previous figure, for a selection of countries and sized by loans:
     - [``]
+     *  
+    - [``]
+     *  
+    - [``]
+     * 
+
+
 
     - [`barchart_totalWords.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWords.png)
     - [`barchart_totalWordsFilmDodge.png`](https://raw.github.com/jennybc/STAT545A/master/hw06_scaffolds/01_justR/barchart_totalWordsFilmDodge.png)
