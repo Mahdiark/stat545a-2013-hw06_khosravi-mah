@@ -37,6 +37,7 @@ folder here just to make the homework repository a bit tidier:
      * This is the clean version of the input data. Actually,its `.rds` version (`finance_clean.rds`) is read in the second script to preserve the orders.
     - [`finance_wide.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_wide.tsv)
      * This is the reshaped to wide version of the `finance_clean.tsv`, which is produced to perform data aggregations and make plots on different indexes that are basically different levels of `finance_clean.tsv`. The other difference is that dependant bank types, e.g. *All_banks*, are omitted here.
+
   * #### Outputs of [`Aggregate_and_Plots.R`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/Aggregate_and_Plots.R):
     - [``]
 
