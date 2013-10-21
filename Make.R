@@ -1,5 +1,5 @@
 ## clean out any previous work
-outputs <- c(list.files(pattern = "*.tsv$"),
+outputs <- c(list.files(pattern = "*.tsv$"),        # This is alright since my raw data is  ".csv"
              list.files(pattern = "*.rds$"),
              list.files(pattern = "*.png$"),
              list.files(pattern = "*.pdf$"))
