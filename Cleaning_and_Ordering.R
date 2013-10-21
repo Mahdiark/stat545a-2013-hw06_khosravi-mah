@@ -64,7 +64,7 @@ gDat <- within(gDat, Index <- factor(as.character(gDat$Index),oldLevels[newOrder
 ggplot(subset(iDat, Index == c("Interest_income","Net_non_interest_income")), aes(x = Bank, weight = Value)) + 
     geom_bar(aes(fill = Index), position = position_dodge(width = 0.6)) + scale_y_log10() + ylab("Income") +
     ggtitle("Income Types") + theme(axis.text.x = element_text(angle=20), axis.title.x= element_text(vjust=2))
-ggsave("barchart_income_types.png")
+ggsave("Barchart_income_types.png")
 
 ggplot(iDatWide, aes(x= Net_provisions, fill= Country)) + geom_density() + scale_x_log10() 
 ggsave("Density_NetProvisions.png")

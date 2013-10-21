@@ -1,7 +1,8 @@
 ## clean out any previous work
 outputs <- c(list.files(pattern = "*.tsv$"),
              list.files(pattern = "*.rds$"),
-             list.files(pattern = "*.png$"))
+             list.files(pattern = "*.png$"),
+             list.files(pattern = "*.pdf$"))
 file.remove(outputs)
 
 ## run my scripts

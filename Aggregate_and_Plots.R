@@ -2,6 +2,7 @@ library(ggplot2)
 library(plyr)
 library(xtable)
 library(RColorBrewer)
+library(grid)
 
 fDat <- readRDS("finance_clean.rds")
 fDatWide <- read.delim("finance_wide.tsv")
@@ -21,10 +22,12 @@ names(BankColors) <- levels(fDatWide$Bank)
 jDat <- droplevels(subset(fDat, Bank == "All_banks"))
 
 # we can see increase in loans on different years:
-ggplot(subset(jDat, Index == "Loans" & Country %in% c("Belgium","Canada","Norway")), 
-      aes(x= Year, y= Value, col= Country)) + geom_point() + geom_line() + ggtitle("Actuall Values") + 
-      ylab("Loans")
+Fig1 <- ggplot(subset(jDat, Index == "Loans" & Country %in% c("Belgium","Canada","Norway")), 
+           aes(x= Year, y= Value, col= Country)) + geom_point() + geom_line() + ggtitle("Actuall Values") + 
+           ylab("Loans")
+print(Fig1)
 ggsave("Loans_allBanks_selectedCountries_Actual.png")
+# this will be also plotted vs. normalized data later
 
 # Average changes are different in order, logging fades away the incease in years,
 # so comparing the average changes is the other option:
@@ -40,11 +43,21 @@ jloanAvgDat <- ddply(loanDat, ~ Country + Year, function(x){
             return(noramizedValue)
             })
 
-ggplot(subset(jloanAvgDat, Country %in% c("Belgium","Canada","Norway")), 
-      aes(x= Year, y= noramizedValue, col= Country)) + geom_point() +geom_line() +ggtitle("Normalized Values")+
-      ylab("Loans")
+Fig2 <- ggplot(subset(jloanAvgDat, Country %in% c("Belgium","Canada","Norway")), 
+          aes(x= Year, y= noramizedValue, col= Country)) + geom_point() +geom_line() +
+          ggtitle("Normalized Values") + ylab("Loans")
 # Much better
 ggsave("Loans_allBanks_selectedCountries_Normalized.png")
+
+# I tried to put Fig1 and Fig2 aside each other but the result is not interesting after all!
+pdf("Loans_allBanks_selectedCountries_NormalizedVsActual.pdf", width = 15, height = 6)
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+print(Fig1, vp = vplayout(1, 1))
+print(Fig2, vp = vplayout(1, 2))
+dev.off()
+# ggsave("Loans_allBanks_selectedCountries_NormalizedVsActual.png")
 
 # still crappy for all the countries
 ggplot(jloanAvgDat, aes(x= Year, y= noramizedValue, col= Country)) + 
@@ -84,9 +97,9 @@ loanFunTot <- function(x ,yearMin) {
 }
 loanCoefsTot <- ddply(loanDat, ~ Country, loanFunTot, yearMin = min(fDat$Year))
 loanCoefsTot <- within(loanCoefsTot, Country <- reorder(Country, slope))
-loanCoefsTotTall <- reshape(loanCoefsTot, direction="long", v.names="Value", idvar="Country", timevar="Coefficients",
+loanCoefsTotTall <- reshape(loanCoefsTot, direction="long", v.names="Value", idvar="Country", 
                          varying=list(names(loanCoefsTot)[2:length(names(loanCoefsTot))]), 
-                         times=c("intercept","slope"))
+                         timevar="Coefficients", times=c("intercept","slope"))
 loanCoefsTotTall <- arrange(loanCoefsTotTall, Country, Coefficients, Value)
 ggplot(loanCoefsTotTall, aes(x = Country, weight = Value)) + scale_y_log10() + ylab("Coefficients") +
   geom_bar(aes(fill = Coefficients), position = position_dodge(width = 0.6)) + ggtitle("Loans Data") + 
