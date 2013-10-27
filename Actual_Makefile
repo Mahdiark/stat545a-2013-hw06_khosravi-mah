@@ -1,0 +1,10 @@
+all: LoansVsYear_lmCoefficients.tsv
+
+finance_*.tsv finance_clean.rds Barchart_income_types.png Density_NetProvisions.png Expense_boxplot.png: BankProfitabilityStatistics.csv Cleaning_and_Ordering.R
+        Rscript Cleaning_and_Ordering.R
+
+Loans_*.png LoansSlopes_allBanks_allCountries_Normalized.png LoansCoefs_*.png Loans_allBanks_selectedCountries_NormalizedVsActual.pdf IndexCorrelation_*.png Employment_*.png LoansVsYear_lmCoefficients.tsv: finance_clean.tsv finance_wide.tsv Aggregate_and_Plots.R
+        Rscript Aggregate_and_Plots.R
+
+clean:
+        rm -f lotr_clean.tsv totalWordsByFilmRace.tsv *.png
