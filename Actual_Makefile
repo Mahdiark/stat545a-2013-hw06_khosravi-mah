@@ -7,4 +7,4 @@ Loans_*.png LoansSlopes_allBanks_allCountries_Normalized.png LoansCoefs_*.png Lo
         Rscript Aggregate_and_Plots.R
 
 clean:
-        rm -f lotr_clean.tsv totalWordsByFilmRace.tsv *.png
+        rm -f *.tsv *.png *.pdf *.rds
