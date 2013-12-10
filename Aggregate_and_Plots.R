@@ -26,7 +26,7 @@ Fig1 <- ggplot(subset(jDat, Index == "Loans" & Country %in% c("Belgium","Canada"
            aes(x= Year, y= Value, col= Country)) + geom_point() + geom_line() + ggtitle("Actuall Values") + 
            ylab("Loans")
 print(Fig1)
-ggsave("Loans_allBanks_selectedCountries_Actual.png")
+ggsave("My_figures/Loans_allBanks_selectedCountries_Actual.png")
 # this will be also plotted vs. normalized data later
 
 # Average changes are different in order, logging fades away the incease in years,
@@ -47,22 +47,23 @@ Fig2 <- ggplot(subset(jloanAvgDat, Country %in% c("Belgium","Canada","Norway")),
           aes(x= Year, y= noramizedValue, col= Country)) + geom_point() +geom_line() +
           ggtitle("Normalized Values") + ylab("Loans")
 # Much better
-ggsave("Loans_allBanks_selectedCountries_Normalized.png")
+ggsave("My_figures/Loans_allBanks_selectedCountries_Normalized.png")
 
 # I tried to put Fig1 and Fig2 aside each other but the result is not interesting after all!
-pdf("Loans_allBanks_selectedCountries_NormalizedVsActual.pdf", width = 15, height = 6)
+pdf("My_figures/Loans_allBanks_selectedCountries_NormalizedVsActual.pdf",
+    width = 15, height = 6)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(1, 2)))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 print(Fig1, vp = vplayout(1, 1))
 print(Fig2, vp = vplayout(1, 2))
 dev.off()
-# ggsave("Loans_allBanks_selectedCountries_NormalizedVsActual.png")
+# ggsave("My_figures/Loans_allBanks_selectedCountries_NormalizedVsActual.png")
 
 # still crappy for all the countries
 ggplot(jloanAvgDat, aes(x= Year, y= noramizedValue, col= Country)) + 
   geom_point() + geom_line() + guides(col = guide_legend(ncol = 2))
-ggsave("Loans_allBanks_allCountries_Normalized.png")
+ggsave("My_figures/Loans_allBanks_allCountries_Normalized.png")
 
 # Better to compare the coefficients of linear regressions:
 loanFun <- function(x ,yearMin) {
@@ -76,7 +77,7 @@ loanCoefs <- within(loanCoefs, Country <- reorder(Country, slope))
 ggplot(loanCoefs, aes(x = Country, weight = slope)) + ylab("Slope") + ggtitle("Normalized Loans Data") +
   geom_bar(aes(fill = "magenta4"), position = position_dodge(width = 0.6), show_guide = FALSE) +
   theme(axis.text.x = element_text(angle=45), axis.title.x= element_text(vjust=2))
-ggsave("LoansSlopes_allBanks_allCountries_Normalized.png")
+ggsave("My_figures/LoansSlopes_allBanks_allCountries_Normalized.png")
 
 # If we want to use dodging for Slope and Intercept, we need to reshape the data to tall
 loanCoefsTall <- reshape(loanCoefs, direction="long", v.names="Value", idvar="Country", timevar="Coefficients",
@@ -86,7 +87,7 @@ loanCoefsTall <- arrange(loanCoefsTall, Country, Coefficients, Value)
 ggplot(loanCoefsTall, aes(x = Country, weight = Value)) + ylab("Coefficients") +
   geom_bar(aes(fill = Coefficients), position= position_dodge(width = 0.6)) +ggtitle("Normalized Loans Data")+
   theme(axis.text.x = element_text(angle=45), axis.title.x= element_text(vjust=2))
-ggsave("LoansCoefs_allBanks_allCountries_Normalized.png")
+ggsave("My_figures/LoansCoefs_allBanks_allCountries_Normalized.png")
 
 # not interesting, better to see non-normalized loan data set
 # barchart for not normalized, i.e. using loanDat:
@@ -105,7 +106,7 @@ ggplot(loanCoefsTotTall, aes(x = Country, weight = Value)) + scale_y_log10() + y
   geom_bar(aes(fill = Coefficients), position = position_dodge(width = 0.6)) + ggtitle("Loans Data") + 
   theme(axis.text.x = element_text(angle=45), axis.title.x= element_text(vjust=2))
 # Better. Intercepts for Russia, Estony and Slovenia are negative and not plotted here. Ditto Japan's Slope.
-ggsave("LoansCoefs_allBanks_allCountries_Actual.png")
+ggsave("My_figures/LoansCoefs_allBanks_allCountries_Actual.png")
 
 ## Different banks data aggregation and plots
 #-----------------------------------------------------
@@ -118,7 +119,7 @@ ggsave("LoansCoefs_allBanks_allCountries_Actual.png")
 # Net_provisions and Interest_income for instance, for different countries:
 ggplot(fDatWide, aes(x= Net_provisions, y= Interest_income, col= Country)) + geom_point(size= 2.5,alpha=(0.6))+
   scale_x_log10() + scale_y_log10() + guides(col = guide_legend(ncol = 2)) + ggtitle("Indexes Correlation")
-ggsave("IndexCorrelation_interest_provisions.png")
+ggsave("My_figures/IndexCorrelation_interest_provisions.png")
 
 # for a custom selection of countries and sized by loans:
 facetCountries <- c("Canada","Denmark","Finland","France" ,"Spain","Mexico")
@@ -130,7 +131,7 @@ ggplot(facetDat, aes(x= Net_provisions, y= Interest_income, fill= Bank))+
   scale_y_log10() + facet_wrap(~ Country) + scale_fill_manual(values = BankColors) +
   scale_size_continuous(range=c(3,20), guide= guide_legend(title="Loan")) + 
   ggtitle("Indexes Correlation")
-ggsave("IndexCorrelation_interest_provisions_facet.png")
+ggsave("My_figures/IndexCorrelation_interest_provisions_facet.png")
 
 # HR plots
 # Some countries show a decrease in emplyees between 2002 to 2006
@@ -139,7 +140,7 @@ ggplot(subset(fDatWide, Country %in% CustomCountries & Bank == "Commercial_banks
   aes(x = Year, y = Number_of_employees, size = sqrt(Number_of_institutions/pi), fill= Country)) + 
   geom_point(pch = 21, show_guide = TRUE) + ylab("Employees") + ggtitle("Employment in Commercial Banks")+
   scale_size_continuous(range=c(3,10), guide= guide_legend(title="Institutions"))
-ggsave("Employment_CommercialBanks_SelectedCounttries.png")
+ggsave("My_figures/Employment_CommercialBanks_SelectedCounttries.png")
 
 # Number of employees in us's commercial banks which shows a decrease after 2007 with decreasing number of
 # institutions
@@ -147,7 +148,7 @@ ggplot(subset(fDatWide, Country == "US" & Bank == "Commercial_banks"), aes(x = Y
   size = sqrt(Number_of_institutions/pi))) + geom_point(pch = 21) + 
   scale_size_continuous(range=c(5,12), guide= guide_legend(title="Institutions")) + ylab("Employees") +
   aes(fill="magenta1", show_guide = FALSE) + ggtitle("Employment in US's Commercial Banks")
-ggsave("Employment_CommercialBanks_USA.png")
+ggsave("My_figures/Employment_CommercialBanks_USA.png")
 
 ## Write the Loans Coefficient table to file:
 #--------------------------------------------------------
