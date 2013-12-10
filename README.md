@@ -37,6 +37,7 @@ folder here just to make the homework repository a bit tidier:
      ![](https://raw.github.com/jennybc/stat545a-2013-hw06_khosravi-mah/master/My_figures/Barchart_income_types.png)
     - [`Density_NetProvisions.png `](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Density_NetProvisions.png):
      * Shows density diagram for net provision index in different countries. We can see from this figure that data for some countries like *Portugal* and *Turkey* is confined to a relatively small range inceasing their corresponding height in density diagram.
+     ![](https://raw.github.com/jennybc/stat545a-2013-hw06_khosravi-mah/master/My_figures/Density_NetProvisions.png)
     - [`Expense_boxplot.png`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/My_figures/Expense_boxplot.png):
      * We can see from this figure that range of data for *Korea* is much higher comparing to other countries. Also, again we can notice that data for some countries like *Portugal*, *Norway*,*Turkey* is confined to a relatively small range.
     - [`finance_clean.tsv`](https://github.com/Mahdiark/stat545a-2013-hw06_khosravi-mah/blob/master/finance_clean.tsv)
